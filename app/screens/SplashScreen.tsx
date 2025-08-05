@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import LoadingDots from '../components/common/LoadingDots';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '../navigation/types';
+import hirebizzLogo from '../../assets/hirebizz-logo.png';
 
 const SplashScreen = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
@@ -18,6 +19,7 @@ const SplashScreen = () => {
 
   return (
     <View style={styles.container}>
+      <Image source={hirebizzLogo} style={styles.logo} />
       <LoadingDots color="#4B9EFF" />
     </View>
   );
