@@ -5,6 +5,7 @@ import { store } from './app/store';
 import AppNavigator from './app/navigation/AppNavigator';
 import { ModalProvider } from './app/context/ModalContext';
 
+
 const myTheme = {
   ...DefaultTheme,
   colors: {

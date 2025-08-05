@@ -9,13 +9,13 @@ export interface User {
   location?: string
   authProvider: 'local' | 'google' | 'github'
   providerId?: string
-  profilePicture: string  
+  profilePicture: string
   isVerified: boolean
   role: 'candidate' | 'employer' | 'admin' | 'superadmin'
   token: string
-  isEmailVerified:boolean
-  isPremiumUser:boolean
-  appliedJobs:[]
+  isEmailVerified: boolean
+  isPremiumUser: boolean
+  appliedJobs: []
 
   company?: {
     name?: string
@@ -25,7 +25,7 @@ export interface User {
 
   resumeURL?: string
   objectName?: string
-  savedJobs: string[] 
+  savedJobs: string[]
 
   createdAt: string
   updatedAt: string

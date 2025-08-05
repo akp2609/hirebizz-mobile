@@ -29,8 +29,8 @@ const RegisterScreen = ({ navigation }: any) => {
         data.user.role === 'candidate'
           ? 'applicant'
           : data.user.role === 'superadmin'
-          ? 'admin'
-          : data.user.role;
+            ? 'admin'
+            : data.user.role;
 
       dispatch(loginSuccess({ ...data.user, role: frontendRole, token: data.token }));
       navigation.replace('Home');
@@ -49,12 +49,14 @@ const RegisterScreen = ({ navigation }: any) => {
         <TextInput
           style={styles.input}
           placeholder="Your Name"
+          placeholderTextColor={'#000'}
           value={name}
           onChangeText={setName}
         />
         <TextInput
           style={styles.input}
           placeholder="Email"
+          placeholderTextColor={'#000'}
           value={email}
           onChangeText={setEmail}
           autoCapitalize="none"
@@ -63,6 +65,7 @@ const RegisterScreen = ({ navigation }: any) => {
         <TextInput
           style={styles.input}
           placeholder="Password"
+          placeholderTextColor={'#000'}
           value={password}
           onChangeText={setPassword}
           secureTextEntry
@@ -101,7 +104,7 @@ const styles = StyleSheet.create({
   },
   card: {
     width: '100%',
-    backgroundColor: '#ffffffcc', 
+    backgroundColor: '#ffffffcc',
     borderRadius: 20,
     padding: 24,
     shadowColor: '#000',

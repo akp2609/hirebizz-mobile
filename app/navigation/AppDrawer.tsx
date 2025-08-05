@@ -24,18 +24,18 @@ const AppDrawer = () => {
     return <EmployerDrawer />
   }
 
-  
+
   return (
     <Drawer.Navigator initialRouteName="Home" screenOptions={{
-    headerStyle: {
-      backgroundColor: '#4B9EFF',
-    },
-    headerTintColor: 'white',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-      color: '#FFFFFF'
-    },
-  }}>
+      headerStyle: {
+        backgroundColor: '#4B9EFF',
+      },
+      headerTintColor: 'white',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+        color: '#FFFFFF'
+      },
+    }}>
       <Drawer.Screen
         name="Home"
         component={HomeScreen}
@@ -71,7 +71,7 @@ const AppDrawer = () => {
         component={Bookmarks}
         options={{
           drawerLabel: 'Bookmarks',
-          drawerIcon: ({color,size})=>(
+          drawerIcon: ({ color, size }) => (
             <Ionicons
               name='bookmark-outline' size={size} color={color}
             />

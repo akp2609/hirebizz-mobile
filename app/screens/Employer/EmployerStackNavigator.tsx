@@ -8,7 +8,7 @@ const Stack = createNativeStackNavigator<EmployerStackParamList>();
 const EmployerStackNavigator = () => (
   <Stack.Navigator screenOptions={{ headerShown: false }}>
     <Stack.Screen name="EmployerDrawer" component={EmployerDrawer} />
-    <Stack.Screen name="ApplicantsScreen" component={ApplicantsScreen} options={{ headerShown: true, title: 'Applicants' }}  />
+    <Stack.Screen name="ApplicantsScreen" component={ApplicantsScreen} options={{ headerShown: true, title: 'Applicants' }} />
   </Stack.Navigator>
 );
 

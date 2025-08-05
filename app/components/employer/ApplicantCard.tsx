@@ -38,7 +38,7 @@ const ApplicantCard: React.FC<ApplicantCardProps> = ({
   const [isLoading, setLoading] = useState(false);
   const navigation = useNavigation();
   const user = useAppSelector((store) => store.user.user);
-  
+
 
   const {
     handleMenuPressApplication,
@@ -47,10 +47,12 @@ const ApplicantCard: React.FC<ApplicantCardProps> = ({
     closeMessageModal,
   } = useModal();
 
-  const reportDetails = { _id,
-  name,
-  email,
-  type: "applicant", };
+  const reportDetails = {
+    _id,
+    name,
+    email,
+    type: "applicant",
+  };
 
   useEffect(() => {
     const fetchResumeURL = async () => {
@@ -144,7 +146,7 @@ const ApplicantCard: React.FC<ApplicantCardProps> = ({
           )}
 
           {isMesaageModalVisible && (
-            <MessageModal senderId={user!._id} receiverId={_id}/>
+            <MessageModal senderId={user!._id} receiverId={_id} />
           )}
         </View>
       )}

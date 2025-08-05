@@ -21,12 +21,12 @@ export const fetchMyApplications = async () => {
 }
 
 
-export const getRefreshedSignedURLApplications = async(applicationId: string)=>{
+export const getRefreshedSignedURLApplications = async (applicationId: string) => {
   const res = await axiosInstance.get(`/applications/${applicationId}/refresh-resume-url`);
   return res.data.url
 }
 
-export const withdrawApplication = async(applicationId:string)=>{
+export const withdrawApplication = async (applicationId: string) => {
   const res = await axiosInstance.delete(`/applications/withdraw-application/${applicationId}`);
   return res.data
 }

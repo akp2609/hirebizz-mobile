@@ -11,7 +11,7 @@ export const registerAPI = async (
   name: string,
   email: string,
   password: string,
-  role:string
+  role: string
 ) => {
   const res = await axiosInstance.post('/auth/register', {
     name,
@@ -22,7 +22,7 @@ export const registerAPI = async (
   return res.data
 }
 
-export const resetPasswordReq = async(email:string)=>{
-  const res = await axiosInstance.post('/auth/request-reset',email);
+export const resetPasswordReq = async (email: string) => {
+  const res = await axiosInstance.post('/auth/request-reset', email);
   return res.data
 }

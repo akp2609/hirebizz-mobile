@@ -6,28 +6,28 @@ import ApplyModal from "../../components/candidate/ApplyModal";
 import ViewJobDetails from "../../components/common/ViewDetailsModal";
 
 
-const Bookmarks = ()=>{
-    const [loading,setLoading] = useState(false)
-    const {
-        openApplyModal,
-        openJobDetailsModal,
-        selectedJob,
-        applyModalVisible,
-        detailsModalVisible,
-        closeApplyModal,
-        closeJobDetailsModal,
-        onSubmit,
-        toggleSaveJob,
-        savedJobs
-    } = useModal();
-    
-    return(
-        <ScrollView style={{ flex: 1, padding: 20,backgroundColor:'#FFF' }}>
+const Bookmarks = () => {
+  const [loading, setLoading] = useState(false)
+  const {
+    openApplyModal,
+    openJobDetailsModal,
+    selectedJob,
+    applyModalVisible,
+    detailsModalVisible,
+    closeApplyModal,
+    closeJobDetailsModal,
+    onSubmit,
+    toggleSaveJob,
+    savedJobs
+  } = useModal();
 
-            {loading? (
-            <ActivityIndicator size="large"/>):(
+  return (
+    <ScrollView style={{ flex: 1, padding: 20, backgroundColor: '#FFF' }}>
 
-                savedJobs.map((job) => (
+      {loading ? (
+        <ActivityIndicator size="large" />) : (
+
+        savedJobs.map((job) => (
           <View key={job._id}>
             <JobCard
               _id={job._id}
@@ -45,34 +45,34 @@ const Bookmarks = ()=>{
             />
 
             {selectedJob && selectedJob.company && (
-      <ApplyModal
-        visible={applyModalVisible}
-        onClose={closeApplyModal}
-        jobId={selectedJob._id}
-        onSubmit={onSubmit}
-      />
-      
-    )}
+              <ApplyModal
+                visible={applyModalVisible}
+                onClose={closeApplyModal}
+                jobId={selectedJob._id}
+                onSubmit={onSubmit}
+              />
 
-    {selectedJob && selectedJob.company && (
-        <ViewJobDetails
-      visible={detailsModalVisible}
-      onClose={closeJobDetailsModal}
-      job={selectedJob}
-      onApply={() => {
-        closeJobDetailsModal();
-        if (selectedJob) {
-       openApplyModal(selectedJob);
-       }
-      }}
-    />
-    )}      
+            )}
+
+            {selectedJob && selectedJob.company && (
+              <ViewJobDetails
+                visible={detailsModalVisible}
+                onClose={closeJobDetailsModal}
+                job={selectedJob}
+                onApply={() => {
+                  closeJobDetailsModal();
+                  if (selectedJob) {
+                    openApplyModal(selectedJob);
+                  }
+                }}
+              />
+            )}
           </View>
         )))}
-        </ScrollView>
+    </ScrollView>
 
-        
-    )
+
+  )
 }
 
 export default Bookmarks;

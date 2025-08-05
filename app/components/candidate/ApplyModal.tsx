@@ -99,7 +99,7 @@ const ApplyModal = ({ visible, onClose, jobId, onSubmit }: Props) => {
               </Text>
             )}
 
-            
+
             <Text style={styles.label}>Cover Letter</Text>
             <TextInput
               multiline
@@ -111,7 +111,7 @@ const ApplyModal = ({ visible, onClose, jobId, onSubmit }: Props) => {
               textAlignVertical="top"
             />
 
-            
+
             {resumeExists && (
               <TouchableOpacity onPress={handleOpenResume}>
                 <Text style={styles.resumeLink}>📄 View Current Resume</Text>

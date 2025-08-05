@@ -19,7 +19,7 @@ const ViewJobDetails: FC<JobDetailsProps> = ({ visible, onClose, onApply, job })
     <Modal visible={visible} animationType="slide" transparent>
       <SafeAreaView style={styles.overlay}>
         <View style={styles.card}>
-          {/* Fixed Header */}
+          
           <View style={styles.header}>
             <TouchableOpacity onPress={onClose} style={styles.backButton}>
               <Feather name="arrow-left" size={20} color="#4B9EFF" />
@@ -27,7 +27,7 @@ const ViewJobDetails: FC<JobDetailsProps> = ({ visible, onClose, onApply, job })
             </TouchableOpacity>
           </View>
 
-          {/* Scrollable Content */}
+          
           <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
             <Text style={styles.title}>{job.title}</Text>
 
@@ -76,13 +76,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'rgba(0,0,0,0.3)',
     justifyContent: 'center',
-    alignItems: 'center', 
+    alignItems: 'center',
   },
   card: {
     backgroundColor: '#fff',
     borderRadius: 16,
     padding: 20,
-    width: '90%', 
+    width: '90%',
     shadowColor: '#000',
     shadowOpacity: 0.1,
     shadowRadius: 10,

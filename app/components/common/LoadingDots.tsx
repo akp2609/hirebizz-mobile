@@ -6,7 +6,7 @@ const LoadingDots = ({ color = '#4B9EFF' }) => {
   const dot2 = new Animated.Value(0);
   const dot3 = new Animated.Value(0);
 
-  const animateDot = (dot:any, delay:any) => {
+  const animateDot = (dot: any, delay: any) => {
     Animated.loop(
       Animated.sequence([
         Animated.timing(dot, {

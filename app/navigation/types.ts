@@ -2,12 +2,12 @@ import { NavigatorScreenParams } from '@react-navigation/native';
 import { EmployerStackParamList } from './EmployerTypes';
 
 export type RootStackParamList = {
-  Splash:undefined;
-  PostLoginLoading:undefined;
+  Splash: undefined;
+  PostLoginLoading: undefined;
   Login: undefined;
   Register: undefined;
   Drawer: undefined;
-  Reset:undefined
+  Reset: undefined
   Chat: {
     chatId: string;
     participant: {
@@ -20,10 +20,10 @@ export type RootStackParamList = {
   Employer: undefined;
   PostJob: undefined;
   Home: undefined;
-  ChatListSceen:undefined;
-  Chats:undefined;
+  ChatListSceen: undefined;
+  Chats: undefined;
   ApplicantsScreen: { jobId: string };
-  Main: NavigatorScreenParams<EmployerStackParamList>; 
+  Main: NavigatorScreenParams<EmployerStackParamList>;
 };
 
 export interface Job {
@@ -37,7 +37,7 @@ export interface Job {
   description: string;
   skills: string[];
   relevancy?: number
-  isActive:boolean
+  isActive: boolean
 }
 
 
@@ -49,7 +49,7 @@ export interface Report {
 }
 
 
-export interface Applicant{
+export interface Applicant {
   _id: string,
   type: string
 }

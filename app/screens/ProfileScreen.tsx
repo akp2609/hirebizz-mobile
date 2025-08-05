@@ -42,10 +42,10 @@ const ProfileScreen = () => {
   const pickImage = async () => {
 
     const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-  if (status !== 'granted') {
-    alert('Permission to access images is required!');
-    return;
-  }
+    if (status !== 'granted') {
+      alert('Permission to access images is required!');
+      return;
+    }
 
     const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
@@ -124,7 +124,7 @@ const ProfileScreen = () => {
   return (
     <LinearGradient colors={['#F8F9FA', '#F8F9FA']} style={styles.gradient}>
       <ScrollView contentContainerStyle={styles.scroll}>
-        
+
 
         <TouchableOpacity onPress={() => setModalVisible(true)}>
           <Image
@@ -163,7 +163,7 @@ const ProfileScreen = () => {
           )}
 
           <Text style={styles.detail}>🎯 Role: {user.role}</Text>
-          {user.role!=='employer' && <Text style={styles.detail}>📄 Applied Jobs: {user.appliedJobs?.length || 0}</Text>}
+          {user.role !== 'employer' && <Text style={styles.detail}>📄 Applied Jobs: {user.appliedJobs?.length || 0}</Text>}
 
           <View style={styles.progressContainer}>
             <View style={[styles.progressBar, { width: `${completeness}%` }]} />
@@ -192,12 +192,12 @@ const ProfileScreen = () => {
             </Text>
           </TouchableOpacity>
 
-          {user.role !== 'employer' && 
-          <TouchableOpacity onPress={handleResume}>
-            <Text style={styles.action}>
-              {user.objectName ? 'View Resume' : 'Upload Resume'}
-            </Text>
-          </TouchableOpacity>
+          {user.role !== 'employer' &&
+            <TouchableOpacity onPress={handleResume}>
+              <Text style={styles.action}>
+                {user.objectName ? 'View Resume' : 'Upload Resume'}
+              </Text>
+            </TouchableOpacity>
           }
         </View>
       </ScrollView>
@@ -277,7 +277,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
-    progressContainer: {
+  progressContainer: {
     width: '100%',
     height: 10,
     backgroundColor: '#e0e0e0',
@@ -334,13 +334,13 @@ const styles = StyleSheet.create({
     borderRadius: 12,
   },
   closeIcon: {
-  position: 'absolute',
-  top: 40,
-  right: 20,
-  backgroundColor: '#4B9EFF',
-  padding: 8,
-  borderRadius: 20,
-  zIndex: 10,
-  elevation: 5,
-},
+    position: 'absolute',
+    top: 40,
+    right: 20,
+    backgroundColor: '#4B9EFF',
+    padding: 8,
+    borderRadius: 20,
+    zIndex: 10,
+    elevation: 5,
+  },
 });

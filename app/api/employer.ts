@@ -31,29 +31,28 @@ export const getApplicants = async (jobId: string) => {
   }
 };
 
-export const getPostedJobs = async()=>{
-    try{
-        const response = await axiosInstance.get('/job/posted-jobs');
-        return response.data;
-    }catch(error){
-        console.error(error);
-        throw new Error('Failed to fetch applicants');
-    }
-}
-
-export const updateApplicationStatus = async(applicationId:string,statusObj:{status: string})=>{
-  try{
-    const res = await axiosInstance.patch(`/applications/update-application-status/${applicationId}`,statusObj);
-    return res.data
-  }catch(err)
-  {
-    console.error(err);
-    throw new Error('Failed to update application status');
-    
+export const getPostedJobs = async () => {
+  try {
+    const response = await axiosInstance.get('/job/posted-jobs');
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw new Error('Failed to fetch applicants');
   }
 }
 
-export const closeJob = async(jobId: string)=>{
+export const updateApplicationStatus = async (applicationId: string, statusObj: { status: string }) => {
+  try {
+    const res = await axiosInstance.patch(`/applications/update-application-status/${applicationId}`, statusObj);
+    return res.data
+  } catch (err) {
+    console.error(err);
+    throw new Error('Failed to update application status');
+
+  }
+}
+
+export const closeJob = async (jobId: string) => {
   try {
     const res = await axiosInstance.patch(`/job/close-job/${jobId}`);
     return res.data;
@@ -63,10 +62,11 @@ export const closeJob = async(jobId: string)=>{
   }
 }
 
-export const deleteJob = async(jobId: string)=>{
-  try{
-  const res = await axiosInstance.delete(`job/delete-job/${jobId}`);
-  return res.data;}catch (err) {
+export const deleteJob = async (jobId: string) => {
+  try {
+    const res = await axiosInstance.delete(`job/delete-job/${jobId}`);
+    return res.data;
+  } catch (err) {
     console.error("Deletejob API failed", err);
     throw err;
   }

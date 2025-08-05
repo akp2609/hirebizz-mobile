@@ -36,35 +36,35 @@ const LoginScreenLocal = ({ navigation }: any) => {
       const data = await loginAPI(email, password);
       const frontendRole =
         data.user.role === 'candidate' ? 'applicant' :
-        data.user.role === 'superadmin' ? 'admin' :
-        data.user.role;
+          data.user.role === 'superadmin' ? 'admin' :
+            data.user.role;
 
       dispatch(loginSuccess({ ...data.user, role: frontendRole, token: data.token }));
       navigation.replace('Main');
     } catch (err) {
       console.error('❌ Login error:', err);
       Alert.alert('Login Failed', 'Please check your credentials and try again.');
-    }finally{
+    } finally {
       setLoading(false);
     }
   };
 
   React.useEffect(() => {
-  let interval: NodeJS.Timeout;
+    let interval: NodeJS.Timeout;
 
-  if (loading) {
-    interval = setInterval(() => {
-      setDots((prev) => {
-        if (prev === '...') return '.';
-        return prev + '.';
-      });
-    }, 500);
-  } else {
-    setDots('');
-  }
+    if (loading) {
+      interval = setInterval(() => {
+        setDots((prev) => {
+          if (prev === '...') return '.';
+          return prev + '.';
+        });
+      }, 500);
+    } else {
+      setDots('');
+    }
 
-  return () => clearInterval(interval);
-}, [loading]);
+    return () => clearInterval(interval);
+  }, [loading]);
 
   return (
     <View style={styles.outer}>
@@ -80,6 +80,7 @@ const LoginScreenLocal = ({ navigation }: any) => {
           <TextInput
             style={styles.input}
             placeholder="Email"
+            placeholderTextColor={'#000'}
             value={email}
             onChangeText={(text) => {
               setEmail(text);
@@ -93,6 +94,7 @@ const LoginScreenLocal = ({ navigation }: any) => {
             <TextInput
               style={styles.input}
               placeholder="Password"
+              placeholderTextColor={'#000'}
               value={password}
               onChangeText={(text) => {
                 setPassword(text);
@@ -111,14 +113,14 @@ const LoginScreenLocal = ({ navigation }: any) => {
           {error ? <Text style={styles.error}>{error}</Text> : null}
 
           {loading ? (
-          <View style={styles.loadingWrapper}>
-          <Text style={styles.loadingText}>Logging in</Text>
-          <Text style={styles.dots}>⏳{dots}</Text>
-          </View>
-            ) : (
-          <TouchableOpacity style={styles.button} onPress={handleLogin}>
-          <Text style={styles.buttonText}>🚀 Login</Text>
-          </TouchableOpacity>
+            <View style={styles.loadingWrapper}>
+              <Text style={styles.loadingText}>Logging in</Text>
+              <Text style={styles.dots}>⏳{dots}</Text>
+            </View>
+          ) : (
+            <TouchableOpacity style={styles.button} onPress={handleLogin}>
+              <Text style={styles.buttonText}>🚀 Login</Text>
+            </TouchableOpacity>
           )}
 
           <Text style={styles.link} onPress={() => navigation.navigate('Reset')}>
@@ -174,6 +176,8 @@ const styles = StyleSheet.create({
     marginBottom: 14,
     borderWidth: 1,
     borderColor: '#dcdde1',
+    minHeight: 48, 
+    minWidth:150
   },
   passwordWrapper: {
     width: '100%',
@@ -210,23 +214,23 @@ const styles = StyleSheet.create({
     color: '#636e72',
   },
   loadingWrapper: {
-  marginTop: 8,
-  alignItems: 'center',
-  justifyContent: 'center',
-  paddingVertical: 14,
-  width: '100%',
-},
-loadingText: {
-  fontSize: 16,
-  fontWeight: '500',
-  color: '#2d3436',
-  marginBottom: 4,
-},
-dots: {
-  fontSize: 24,
-  letterSpacing: 4,
-  color: '#4B9EFF',
-},
+    marginTop: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 14,
+    width: '100%',
+  },
+  loadingText: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#2d3436',
+    marginBottom: 4,
+  },
+  dots: {
+    fontSize: 24,
+    letterSpacing: 4,
+    color: '#4B9EFF',
+  },
 
 });
 

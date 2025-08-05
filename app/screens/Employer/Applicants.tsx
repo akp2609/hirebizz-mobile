@@ -23,9 +23,9 @@ const Applicants = () => {
       {jobs.length === 0 && !loading ? (
         <Text>No jobs posted yet.</Text>
       ) : (
-        jobs.filter((job)=>job.isActive === true || job.isActive === false).sort(
-          (a,b)=>{
-            return Number(b.isActive)-Number(a.isActive)
+        jobs.filter((job) => job.isActive === true || job.isActive === false).sort(
+          (a, b) => {
+            return Number(b.isActive) - Number(a.isActive)
           }
         ).map((job) => (
           <JobCard

@@ -29,7 +29,7 @@ export const uploadProfilePic = async (image: {
   type: string
 }) => {
   const formData = new FormData()
-  formData.append('profilePic', {
+  formData.append('image', {
     uri: image.uri,
     name: image.name,
     type: image.type,
@@ -44,32 +44,32 @@ export const uploadProfilePic = async (image: {
   return res.data
 }
 
-export const getUserProfile = async()=>{
+export const getUserProfile = async () => {
   const res = await axiosInstance.get('/user/get-profile')
   return res.data.user;
 }
 
-export const refreshUserResumeURL = async()=>{
+export const refreshUserResumeURL = async () => {
   const res = await axiosInstance.get('/user/refresh-resume-url')
   return res.data.resumeURL;
 }
 
-export const userRelevantJobs = async()=>{
+export const userRelevantJobs = async () => {
   const res = await axiosInstance.get('/user/relevant-jobs');
   return res.data.relevantJobs
 }
 
-export const getSavedJobs = async()=>{
+export const getSavedJobs = async () => {
   const res = await axiosInstance.get('/user/saved-jobs');
   return res.data.savedJobs;
 }
 
-export const postSavedJob = async(jobId:string)=>{
+export const postSavedJob = async (jobId: string) => {
   const res = await axiosInstance.post(`/user/${jobId}/save-Job`)
   return res.data;
 }
 
-export const deleteSavedJobs = async(jobId:string)=>{
+export const deleteSavedJobs = async (jobId: string) => {
   const res = await axiosInstance.delete(`/user/saved-Jobs/${jobId}`)
   return res.data
 }

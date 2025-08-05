@@ -17,13 +17,23 @@
     },
     "android": {
       "adaptiveIcon": {
+        "package": "com.hirebizz.xyz.hirebizzMobile",
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.akp_2609.hirebizzapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-web-browser"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "218d4ae7-4b1f-4b7f-9392-fc2fe7c2de3c"
+      }
     }
   }
 }

@@ -2,7 +2,7 @@ import axios from 'axios'
 import { store } from '../store'
 
 const axiosInstance = axios.create({
-  baseURL: '',
+  baseURL: 'https://api.hirebizz.xyz/api/',
   headers: {
     'Content-Type': 'application/json',
   },

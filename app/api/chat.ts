@@ -15,8 +15,8 @@ export const markAsSeen = async (chatId: string, messageKey: string) => {
   return res.data
 }
 
-export const getChatThreads = async(userId:string)=>{
+export const getChatThreads = async (userId: string) => {
   const res = await axiosInstance.get(`/chat/user-threads/${userId}`)
-  console.log("from api",res.data)
+  console.log("from api", res.data)
   return res.data.threads
 }

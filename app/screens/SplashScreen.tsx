@@ -3,14 +3,14 @@ import { View, Image, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import LoadingDots from '../components/common/LoadingDots';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import type { RootStackParamList } from '../navigation/types'; 
+import type { RootStackParamList } from '../navigation/types';
 
 const SplashScreen = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.replace('Login'); 
+      navigation.replace('Login');
     }, 2500);
 
     return () => clearTimeout(timer);

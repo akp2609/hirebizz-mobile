@@ -105,12 +105,12 @@ const ChatScreen = () => {
   return (
     <View style={styles.container}>
       {loading ? (
-  <View style={styles.loaderContainer}>
-    <Ionicons name="chatbubble-ellipses-outline" size={32} color="#4B9EFF" style={{ marginBottom: 8 }} />
-    <ActivityIndicator size="large" color="#4B9EFF" />
-    <Text style={styles.loaderText}>Loading chat...</Text>
-  </View>
-)  : (
+        <View style={styles.loaderContainer}>
+          <Ionicons name="chatbubble-ellipses-outline" size={32} color="#4B9EFF" style={{ marginBottom: 8 }} />
+          <ActivityIndicator size="large" color="#4B9EFF" />
+          <Text style={styles.loaderText}>Loading chat...</Text>
+        </View>
+      ) : (
         <>
           <View style={styles.messageWrapper}>
             <ScrollView
@@ -121,60 +121,60 @@ const ChatScreen = () => {
             >
               {messages.map(msg => (
                 <View
-  key={msg.key}
-  style={[
-    styles.messageBubble,
-    msg.senderId === userId ? styles.outgoing : styles.incoming,
-  ]}
->
+                  key={msg.key}
+                  style={[
+                    styles.messageBubble,
+                    msg.senderId === userId ? styles.outgoing : styles.incoming,
+                  ]}
+                >
 
-  <TouchableOpacity
- onLongPress={async () => {
-    await Clipboard.setStringAsync(msg.message);
-    Alert.alert('Copied', 'Message copied to clipboard');
-  }}
-  activeOpacity={0.8}
->
-  <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
-    <ParsedText
-  style={[
-    {
-      color: msg.senderId === userId ? '#fff' : '#000',
-      fontSize: 14,
-      flexShrink: 1,
-      flexWrap: 'wrap',
-    },
-  ]}
-  parse={[
-    {
-      type: 'url',
-      style: {
-        textDecorationLine: 'underline',
-        color: msg.senderId === userId ? '#B0E0FF' : '#1e90ff',
-      },
-      onPress: url => Linking.openURL(url),
-    },
-  ]}
->
-  {msg.message}
-</ParsedText>
+                  <TouchableOpacity
+                    onLongPress={async () => {
+                      await Clipboard.setStringAsync(msg.message);
+                      Alert.alert('Copied', 'Message copied to clipboard');
+                    }}
+                    activeOpacity={0.8}
+                  >
+                    <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
+                      <ParsedText
+                        style={[
+                          {
+                            color: msg.senderId === userId ? '#fff' : '#000',
+                            fontSize: 14,
+                            flexShrink: 1,
+                            flexWrap: 'wrap',
+                          },
+                        ]}
+                        parse={[
+                          {
+                            type: 'url',
+                            style: {
+                              textDecorationLine: 'underline',
+                              color: msg.senderId === userId ? '#B0E0FF' : '#1e90ff',
+                            },
+                            onPress: url => Linking.openURL(url),
+                          },
+                        ]}
+                      >
+                        {msg.message}
+                      </ParsedText>
 
 
-    <Text
-      style={{
-        fontSize: 8,
-        color: msg.senderId === userId ? '#fff' : '#666',
-        marginLeft: 6,
-        marginBottom: 2,
-      }}
-    >
-      {moment(msg.timestamp).local().format('HH:mm')}
-    </Text>
-  </View>
-  </TouchableOpacity>
-</View>
+                      <Text
+                        style={{
+                          fontSize: 8,
+                          color: msg.senderId === userId ? '#fff' : '#666',
+                          marginLeft: 6,
+                          marginBottom: 2,
+                        }}
+                      >
+                        {moment(msg.timestamp).local().format('HH:mm')}
+                      </Text>
+                    </View>
+                  </TouchableOpacity>
+                </View>
               ))}
-              
+
             </ScrollView>
 
             {!isAtBottom && (
@@ -216,16 +216,16 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   messageBubble: {
-  padding: 10,
-  borderRadius: 16,
-  marginVertical: 4,
-  maxWidth: '80%',
-  shadowColor: '#000',
-  shadowOpacity: 0.05,
-  shadowRadius: 3,
-  overflow: 'hidden',
-  alignSelf: 'flex-start', 
-},
+    padding: 10,
+    borderRadius: 16,
+    marginVertical: 4,
+    maxWidth: '80%',
+    shadowColor: '#000',
+    shadowOpacity: 0.05,
+    shadowRadius: 3,
+    overflow: 'hidden',
+    alignSelf: 'flex-start',
+  },
 
   incoming: {
     backgroundColor: '#f0f0f0',
@@ -274,15 +274,15 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   loaderContainer: {
-  flex: 1,
-  justifyContent: 'center',
-  alignItems: 'center',
-  backgroundColor: '#FFFFFF',
-},
-loaderText: {
-  marginTop: 12,
-  fontSize: 16,
-  color: '#555',
-},
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+  },
+  loaderText: {
+    marginTop: 12,
+    fontSize: 16,
+    color: '#555',
+  },
 
 });

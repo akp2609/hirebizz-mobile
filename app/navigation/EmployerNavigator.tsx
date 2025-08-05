@@ -24,47 +24,47 @@ const EmployerDrawer = () => (
       color: '#FFFFFF'
     },
   }}>
-  <Drawer.Screen
-    name="Home"
-    component={HomeScreen}
-    options={{
-      drawerLabel: 'Dashboard',
-      drawerIcon: ({ color, size }) => (
-        <Ionicons name="home-outline" size={size} color={color} />
-      ),
-    }}
-  />
-  <Drawer.Screen
-    name="Post Job"
-    component={PostJobScreen}
-    options={{
-      drawerLabel: 'Post Job',
-      drawerIcon: ({ color, size }) => (
-        <Ionicons name="add-circle-outline" size={size} color={color} />
-      ),
-    }}
-  />
-  <Drawer.Screen
-    name="Applicants"
-    component={Applicants}
-    options={{
-      drawerLabel: 'Applicants',
-      drawerIcon: ({ color, size }) => (
-        <Ionicons name="people-outline" size={size} color={color} />
-      ),
-    }}
-  />
-  <Drawer.Screen
-        name="Chats"
-        component={ChatListScreen}
-        options={{
-          drawerLabel: 'Chats',
-          drawerIcon: ({ color, size }) => (
-            <Ionicons name="chatbubble-ellipses-outline" size={size} color={color} />
-          ),
-        }}
-      />
-  <Drawer.Screen
+    <Drawer.Screen
+      name="Home"
+      component={HomeScreen}
+      options={{
+        drawerLabel: 'Dashboard',
+        drawerIcon: ({ color, size }) => (
+          <Ionicons name="home-outline" size={size} color={color} />
+        ),
+      }}
+    />
+    <Drawer.Screen
+      name="Post Job"
+      component={PostJobScreen}
+      options={{
+        drawerLabel: 'Post Job',
+        drawerIcon: ({ color, size }) => (
+          <Ionicons name="add-circle-outline" size={size} color={color} />
+        ),
+      }}
+    />
+    <Drawer.Screen
+      name="Applicants"
+      component={Applicants}
+      options={{
+        drawerLabel: 'Applicants',
+        drawerIcon: ({ color, size }) => (
+          <Ionicons name="people-outline" size={size} color={color} />
+        ),
+      }}
+    />
+    <Drawer.Screen
+      name="Chats"
+      component={ChatListScreen}
+      options={{
+        drawerLabel: 'Chats',
+        drawerIcon: ({ color, size }) => (
+          <Ionicons name="chatbubble-ellipses-outline" size={size} color={color} />
+        ),
+      }}
+    />
+    <Drawer.Screen
       name="Profile"
       component={ProfileScreen}
       options={{
@@ -74,7 +74,7 @@ const EmployerDrawer = () => (
         ),
       }}
     />
-  <Drawer.Screen
+    <Drawer.Screen
       name="Logout"
       component={LogoutScreen}
       options={{
