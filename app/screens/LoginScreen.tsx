@@ -71,7 +71,7 @@ const LoginScreenLocal = ({ navigation }: any) => {
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
         <View style={styles.card}>
           <Image
-            source={require('../../assets/splash-icon.png')}
+            source={require('../../assets/hirebizz-logo.png')}
             style={styles.logo}
             resizeMode="contain"
           />
@@ -160,6 +160,7 @@ const styles = StyleSheet.create({
     width: 80,
     height: 80,
     marginBottom: 12,
+    borderRadius:100
   },
   title: {
     fontSize: 28,

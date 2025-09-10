@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "hirebizz-app",
+    "name": "Hirebizz",
     "slug": "hirebizz-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/hirebizz-logo.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/hirebizz-logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -25,7 +25,7 @@
       "package": "com.akp_2609.hirebizzapp"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/hirebizz-logo.png"
     },
     "plugins": [
       "expo-web-browser"

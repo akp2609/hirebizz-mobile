@@ -39,5 +39,6 @@ const styles = StyleSheet.create({
     height: 160,
     resizeMode: 'contain',
     marginBottom: 30,
+    borderRadius:100
   },
 });
